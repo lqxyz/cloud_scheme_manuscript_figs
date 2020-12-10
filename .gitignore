@@ -1,0 +1,13 @@
+# Ipyhon Notebook
+*.ipynb_checkpoints*/
+
+# Temporary file
+tmp.*
+tmp
+
+*~
+.DS_Store
+._.DS_Store
+
+__pycache__
+
