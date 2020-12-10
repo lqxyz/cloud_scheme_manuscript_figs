@@ -2,8 +2,9 @@ from __future__ import print_function
 from __future__ import division
 import numpy as np
 import xarray as xr
+import pandas as pd
 from mpl_toolkits.basemap import Basemap
-from scipy import interpolate
+from scipy import interpolate, stats
 import warnings
 warnings.simplefilter(action='ignore', category=FutureWarning)
 import proplot as plot
@@ -192,7 +193,7 @@ def low_cloud_improvement_evaluation_with_map(ds_arr_low, exp_names_local, obs_f
     col_names = ['FD - obs', 'ALL - obs']
     for region, range_dict in regions_dict.items():
         var_mean = []
-        for dt, exp_nm in zip([swcre_diff1, swcre_diff2], exp_names):
+        for dt, exp_nm in zip([swcre_diff1, swcre_diff2], exp_names_local):
             var_mean.append(get_regional_mean_for_dt(dt, range_dict))
         sw_cre_bias.append(var_mean)
         row_nms.append(region)
@@ -279,7 +280,7 @@ def low_cloud_improvement_evaluation(ds_arr_low, exp_names_local, obs_flux_dict,
     col_names = ['FD - obs', 'ALL - obs']
     for region, range_dict in regions_dict.items():
         var_mean = []
-        for dt, exp_nm in zip([swcre_diff1, swcre_diff2], exp_names):
+        for dt, exp_nm in zip([swcre_diff1, swcre_diff2], exp_names_local):
             var_mean.append(get_regional_mean_for_dt(dt, range_dict))
         sw_cre_bias.append(var_mean)
         row_nms.append(region)
