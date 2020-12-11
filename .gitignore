@@ -11,3 +11,6 @@ tmp
 
 __pycache__
 
+# Ignore figure file
+figs
+
