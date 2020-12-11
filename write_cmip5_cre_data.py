@@ -2,7 +2,6 @@ from __future__ import print_function
 import os
 import numpy as np
 import xarray as xr
-import json
 import warnings
 warnings.simplefilter(action='ignore', category=FutureWarning)
 from analysis_functions import get_global_mean
