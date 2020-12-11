@@ -12,3 +12,7 @@
 * `taylorDiagram`: https://gist.github.com/ycopin/3342888#file-taylordiagram-py
 * `isca` package: Interpolate from sigma to pressure levels. Install following the instruction on https://execlim.github.io/Isca/latest/html/install.html
 
+#### Figures (Jupyter notebooks)
+* Figures 6 to 18: `cloud_scheme_manuscript_figures_6_18.ipynb`
+  If Github can not load this notebook, you can try this [link](https://nbviewer.jupyter.org/github/lqxyz/cloud_scheme_manuscript_figs/blob/main/cloud_scheme_manuscript_figures_6_18.ipynb) through https://nbviewer.jupyter.org.
+
