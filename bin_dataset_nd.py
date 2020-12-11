@@ -213,7 +213,7 @@ def select_3d_obs_data(ds_m, bin_data_dict, ds_mask, bins,
 
 
 def bin_obs_data(ds, s_lat=-30, n_lat=30, bin_var_nm='omega500',
-        grp_time_var='year', bins=np.arange(0,1.1,0.1), land_sea='global'):
+        grp_time_var='year', bins=np.arange(0,1.1,0.1), land_sea='global', land_mask_dir='./data/'):
 
     """ Return binned data for isca dataset based on certain variable
         such as vertical pressure velocity at 500hPa (omega500), ELF,
@@ -221,7 +221,7 @@ def bin_obs_data(ds, s_lat=-30, n_lat=30, bin_var_nm='omega500',
     """
     ds_m = ds.where(np.logical_and(ds.lat>=s_lat, ds.lat<=n_lat), drop=True)
 
-    ds_mask = xr.open_dataset('era_land_t42.nc', decode_times=False)
+    ds_mask = xr.open_dataset(os.path.join(land_mask_dir, 'era_land_t42.nc'), decode_times=False)
     ds_mask = ds_mask.where(np.logical_and(ds_mask.lat>=s_lat,ds_mask.lat<=n_lat), drop=True)
     #ds_m.coords['mask'] = (('lat', 'lon'), ds_mask.land_mask.values)
 
@@ -244,7 +244,7 @@ def bin_obs_data(ds, s_lat=-30, n_lat=30, bin_var_nm='omega500',
 
 
 def bin_isca_exp_data(ds, s_lat=-30, n_lat=30, bin_var_nm='omega500', bin_var=None,
-        grp_time_var='year', bins=np.arange(0,1.1,0.1), land_sea='global'):
+        grp_time_var='year', bins=np.arange(0,1.1,0.1), land_sea='global', land_mask_dir='./data'):
 
     """ Return binned data for isca dataset based on certain variable
         such as vertical pressure velocity at 500hPa (omega500), ELF,
@@ -252,7 +252,7 @@ def bin_isca_exp_data(ds, s_lat=-30, n_lat=30, bin_var_nm='omega500', bin_var=No
     """
     ds_m = ds.where(np.logical_and(ds.lat>=s_lat, ds.lat<=n_lat), drop=True)
 
-    ds_mask = xr.open_dataset('era_land_t42.nc', decode_times=False)
+    ds_mask = xr.open_dataset(os.path.join(land_mask_dir, 'era_land_t42.nc'), decode_times=False)
     ds_mask = ds_mask.where(np.logical_and(ds_mask.lat>=s_lat,ds_mask.lat<=n_lat), drop=True)
     #ds_m.coords['mask'] = (('lat', 'lon'), ds_mask.land_mask.values)
 

@@ -1,5 +1,6 @@
 
 from __future__ import print_function
+import os
 import numpy as np
 import warnings
 warnings.simplefilter(action='ignore', category=FutureWarning)
@@ -7,7 +8,7 @@ import proplot as plot
 from zonal_cre_from_cmip_isca import get_global_mean
 
 
-def global_mean_CRE_bar_plot(ds_arr, exp_names, obs_toa_cre, figname):
+def global_mean_CRE_bar_plot(ds_arr, exp_names, obs_toa_cre, figname, data_dir='./data'):
     text_size = 7.5
 
     obs_nm41 = 'CERES_EBAF Ed4.1'
@@ -20,7 +21,7 @@ def global_mean_CRE_bar_plot(ds_arr, exp_names, obs_toa_cre, figname):
     # plot histogram of CREs
     # ================================================ #
     # recover dict from 0-d numpy array
-    cmip5_gm_cre = np.load('cmip5_historical_gm_cre_r128x64.npy', allow_pickle=True).item()
+    cmip5_gm_cre = np.load(os.path.join(data_dir, 'cmip5_historical_gm_cre_r128x64.npy'), allow_pickle=True).item()
 
     cmip5_model_nms = sorted(cmip5_gm_cre.keys(), key=str.casefold)
     cmip5_model_nms.remove('MME') 
