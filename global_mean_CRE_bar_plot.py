@@ -5,7 +5,7 @@ import numpy as np
 import warnings
 warnings.simplefilter(action='ignore', category=FutureWarning)
 import proplot as plot
-from zonal_cre_from_cmip_isca import get_global_mean
+from analysis_functions import get_global_mean
 
 
 def global_mean_CRE_bar_plot(ds_arr, exp_names, obs_toa_cre, figname, data_dir='./data'):

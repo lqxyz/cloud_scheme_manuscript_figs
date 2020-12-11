@@ -12,25 +12,6 @@ import proplot as plot
 from analysis_functions import get_unique_line_labels
 
 
-def get_global_mean(dt):
-    dims = dt.dims
-    try:
-        lat_ind = dims.index('latitude')
-        lat_nm = 'latitude'
-        lon_nm = 'longitude'
-    except:
-        lat_ind = dims.index('lat')
-        lat_nm = 'lat'
-        lon_nm = 'lon'
-
-    coslat = np.cos(np.deg2rad(dt[lat_nm]))
-    dt_gm = np.average(dt.mean(lon_nm), axis=lat_ind, weights=coslat)
-    dims1 = [d for d in dims if d!=lat_nm and d!=lon_nm]
-    coords = [dt[d] for d in dims1]
-    dt_gm = xr.DataArray(dt_gm, coords=coords, dims=dims1)
-    return dt_gm
-
-
 def cmp_zonal_mean_CREs(ds_arr, line_labels, obs_cre, fig_name,
         line_styles=None, obs_names=None, cmip_dict=None, obs_dict_keys=None):
 
@@ -105,3 +86,4 @@ def cmp_zonal_mean_CREs(ds_arr, line_labels, obs_cre, fig_name,
     fig.legend(new_lines, new_labels, loc='b', frameon=False, ncol=4)
 
     fig.savefig(fig_name, bbox_inches='tight', pad_inches=0.1, transparent=False)
+

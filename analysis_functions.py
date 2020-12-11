@@ -162,3 +162,21 @@ def sigma_to_pressure_level(exp_folder_name, start_file, end_file, in_file_name=
     for infile, outfile in zip(files, out_files):
         interpolate_output(infile, outfile, all_fields=all_fields, p_levs=p_levs, var_names=var_names)
 
+def get_global_mean(dt):
+    dims = dt.dims
+    try:
+        lat_ind = dims.index('latitude')
+        lat_nm = 'latitude'
+        lon_nm = 'longitude'
+    except:
+        lat_ind = dims.index('lat')
+        lat_nm = 'lat'
+        lon_nm = 'lon'
+
+    coslat = np.cos(np.deg2rad(dt[lat_nm]))
+    dt_gm = np.average(dt.mean(lon_nm), axis=lat_ind, weights=coslat)
+    dims1 = [d for d in dims if d!=lat_nm and d!=lon_nm]
+    coords = [dt[d] for d in dims1]
+    dt_gm = xr.DataArray(dt_gm, coords=coords, dims=dims1)
+    return dt_gm
+
