@@ -13,7 +13,7 @@
 * `isca` package: Interpolate from sigma to pressure levels. Install following the instruction on https://execlim.github.io/Isca/latest/html/install.html
 
 #### Figures (Jupyter notebooks)
-* Figures 4: [`figure4_qv_threshold.ipynb`](https://github.com/lqxyz/cloud_scheme_manuscript_figs/blob/main/figure4_qv_threshold.ipynb)
+* Figures 4: [`figure4_qv_threshold.ipynb`](https://github.com/lqxyz/cloud_scheme_manuscript_figs/blob/main/figure4_qv_threshold.ipynb), or try this [link](https://nbviewer.jupyter.org/github/lqxyz/cloud_scheme_manuscript_figs/blob/main/figure4_qv_threshold.ipynb) on [nbviewer](https://nbviewer.jupyter.org). 
 * Figure 5: [`figure5_low_cld_proxy.ipynb`](https://github.com/lqxyz/cloud_scheme_manuscript_figs/blob/main/figure5_low_cld_proxy.ipynb). If Github can not load this notebook, you can try this [link](https://nbviewer.jupyter.org/github/lqxyz/cloud_scheme_manuscript_figs/blob/main/figure5_low_cld_proxy.ipynb) on [nbviewer](https://nbviewer.jupyter.org).
 * Figures 6 to 18: [`figures_6_18.ipynb`](https://github.com/lqxyz/cloud_scheme_manuscript_figs/blob/main/figures_6_18.ipynb), or try this [link](https://nbviewer.jupyter.org/github/lqxyz/cloud_scheme_manuscript_figs/blob/main/figures_6_18.ipynb) on [nbviewer](https://nbviewer.jupyter.org). 
 
