@@ -12,10 +12,11 @@
 * `taylorDiagram`: https://gist.github.com/ycopin/3342888#file-taylordiagram-py
 * `isca` package: Interpolate from sigma to pressure levels. Install following the instruction on https://execlim.github.io/Isca/latest/html/install.html
 
-#### Figures (Jupyter notebooks)
+#### Figures and tables (Jupyter notebooks)
 * Figure 2: [`figure2.ipynb`](https://github.com/lqxyz/cloud_scheme_manuscript_figs/blob/main/fig2_fit_coeff/figure2.ipynb). If Github can not load this notebook, you can try this [link](https://nbviewer.jupyter.org/github/lqxyz/cloud_scheme_manuscript_figs/blob/main/fig2_fit_coeff/figure2.ipynb) on [nbviewer](https://nbviewer.jupyter.org).
 * Figure 3: [`figure3.ipynb`](https://github.com/lqxyz/cloud_scheme_manuscript_figs/blob/main/fig3_cmp/figure3.ipynb), or try this [link](https://nbviewer.jupyter.org/github/lqxyz/cloud_scheme_manuscript_figs/blob/main/fig3_cmp/figure3.ipynb).
 * Figure 4: [`figure4_qv_threshold.ipynb`](https://github.com/lqxyz/cloud_scheme_manuscript_figs/blob/main/figure4_qv_threshold.ipynb), or try this [link](https://nbviewer.jupyter.org/github/lqxyz/cloud_scheme_manuscript_figs/blob/main/figure4_qv_threshold.ipynb).
 * Figure 5: [`figure5_low_cld_proxy.ipynb`](https://github.com/lqxyz/cloud_scheme_manuscript_figs/blob/main/figure5_low_cld_proxy.ipynb), or try this [link](https://nbviewer.jupyter.org/github/lqxyz/cloud_scheme_manuscript_figs/blob/main/figure5_low_cld_proxy.ipynb).
 * Figures 6 to 18 and Table 3: [`figures_6_18.ipynb`](https://github.com/lqxyz/cloud_scheme_manuscript_figs/blob/main/figures_6_18.ipynb), or try this [link](https://nbviewer.jupyter.org/github/lqxyz/cloud_scheme_manuscript_figs/blob/main/figures_6_18.ipynb).
+* Table 4: [`table4_parameter_sensitivity.ipynb`](https://github.com/lqxyz/cloud_scheme_manuscript_figs/blob/main/table4_parameter_sensitivity.ipynb), or try this [link](https://nbviewer.jupyter.org/github/lqxyz/cloud_scheme_manuscript_figs/blob/main/table4_parameter_sensitivity.ipynb).
 
