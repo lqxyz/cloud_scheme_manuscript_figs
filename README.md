@@ -7,7 +7,7 @@
 * The CMIP5 ouputs are obtained from the Centre for Environmental Data Analysis (https://www.ceda.ac.uk). 
 * The Isca model outputs produced for this study are available on Zenodo: [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3831988.svg)](https://doi.org/10.5281/zenodo.3831988)
 
-#### Requird packages (uncommon) 
+#### Required packages (uncommon)
 * `proplot`: https://proplot.readthedocs.io/en/latest/index.html 
 * `taylorDiagram`: https://gist.github.com/ycopin/3342888#file-taylordiagram-py
 * `isca` package: Interpolate from sigma to pressure levels. Install following the instruction on https://execlim.github.io/Isca/latest/html/install.html
