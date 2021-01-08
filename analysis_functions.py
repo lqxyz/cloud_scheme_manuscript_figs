@@ -9,7 +9,7 @@ from isca.util import interpolate_output
 
 def open_experiment(exp_folder_name, start_file, end_file, file_name='atmos_monthly.nc', nbits=4, base_dir=None):
     """
-    Modified from 
+    Modified from https://github.com/ExeClim/ictp-isca-workshop-2018/blob/master/analysis/analyse_functions.py#L9
     """
     if base_dir is None:
         base_dir = os.environ['GFDL_DATA']
