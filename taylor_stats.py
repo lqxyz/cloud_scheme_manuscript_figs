@@ -30,6 +30,10 @@ def fill_ndarr_with_1darr(arr_1d, shp, axis=None):
 
 
 def pattern_cor(mod, obs, weights):
+    """
+    Refer to https://www.ncl.ucar.edu/Document/Functions/Contributed/pattern_cor.shtml
+    pattern_cor2 function in "$NCARG_ROOT/lib/ncarg/nclscripts/csm/contributed.ncl"
+    """
     mod = np.array(mod)
     obs = np.array(obs)
     weights = np.array(weights)
