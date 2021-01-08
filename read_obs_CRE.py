@@ -12,7 +12,6 @@ def rename_dims_to_standards(ds, new_dims=('time','lat','lon')):
         dim_dict[old_dim] = new_dim
     return ds.rename(dim_dict)
 
-
     
 def read_toa_cre_obs(dataset_name='ALL', base_dir='/scratch/ql260/obs_datasets/'):
     def calc_and_add_cre_to_dict(toa_cre, ds_name, lw_clr, lw_cld, 
@@ -27,7 +26,6 @@ def read_toa_cre_obs(dataset_name='ALL', base_dir='/scratch/ql260/obs_datasets/'
         if iwp is not None:
             dt['iwp'] = rename_dims_to_standards(iwp)
         toa_cre[ds_name] = dt
-
 
     # ================== Read CERES ================== #
     def read_ceres_ebaf_ed4p1():
@@ -1067,7 +1065,6 @@ def read_surf_CRE_obs(dataset_name='ALL', base_dir='/scratch/ql260/obs_datasets/
         dt['surf_net_cre'] = dt['surf_lw_cre'] + dt['surf_sw_cre']
         
         surf_cre[ds_name] = dt
-
 
     # Control flow
     surf_cre = {}

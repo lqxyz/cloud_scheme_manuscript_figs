@@ -237,7 +237,6 @@ def bin_obs_data(ds, s_lat=-30, n_lat=30, bin_var_nm='omega500',
         vars_dict[key] = (dims, val)
     
     vars_dict['pdf_omega'] = (dims, pdf_m)
-
     ds_bin_mean_m_array = xr.Dataset(vars_dict, coords=coords2)
 
     return ds_bin_mean_m_array
@@ -285,7 +284,6 @@ def bin_isca_exp_data(ds, s_lat=-30, n_lat=30, bin_var_nm='omega500', bin_var=No
         vars_dict[key] = (dims, val)
     
     vars_dict['pdf_omega'] = (dims, pdf_m)
-
     ds_bin_mean_m_array = xr.Dataset(vars_dict, coords=coords2)
 
     return ds_bin_mean_m_array
