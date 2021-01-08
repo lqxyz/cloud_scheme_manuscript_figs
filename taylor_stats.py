@@ -41,15 +41,15 @@ def pattern_cor(mod, obs, weights):
     WGT = fill_ndarr_with_1darr(weights, dimx, axis=0)
 
     sumWGT   = np.sum(WGT)
-    xAvgArea = np.sum(mod*WGT)/sumWGT      # weighted area average
-    yAvgArea = np.sum(obs*WGT)/sumWGT
+    xAvgArea = np.sum(mod * WGT) / sumWGT # weighted area average
+    yAvgArea = np.sum(obs * WGT) / sumWGT
 
     xAnom    = mod - xAvgArea  # anomalies
     yAnom    = obs - yAvgArea
 
-    xyCov    = np.sum(WGT*xAnom*yAnom)
-    xAnom2   = np.sum(WGT*xAnom**2)
-    yAnom2   = np.sum(WGT*yAnom**2)
+    xyCov    = np.sum(WGT * xAnom * yAnom)
+    xAnom2   = np.sum(WGT * xAnom**2)
+    yAnom2   = np.sum(WGT * yAnom**2)
 
     r = xyCov / ( np.sqrt(xAnom2) * np.sqrt(yAnom2) )
 
@@ -73,12 +73,11 @@ def calc_centered_rmse(mod, obs, weights):
     obs = np.array(obs)
     weights = np.array(weights)
     dimx = np.shape(mod)
-    #wgt = fill_ndarr_with_1darr(weights, dimx, axis=0)
 
     WGT = fill_ndarr_with_1darr(weights, dimx, axis=0)
     sumWGT   = np.sum(WGT)
-    xAvgArea = np.sum(mod*WGT)/sumWGT      # weighted area average
-    yAvgArea = np.sum(obs*WGT)/sumWGT
+    xAvgArea = np.sum(mod * WGT) / sumWGT # weighted area average
+    yAvgArea = np.sum(obs * WGT) / sumWGT
 
     xAnom    = mod - xAvgArea  # anomalies
     yAnom    = obs - yAvgArea
