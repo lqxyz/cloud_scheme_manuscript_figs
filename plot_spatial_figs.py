@@ -229,12 +229,12 @@ def cmp_spatial_patterns_from_exps_and_obs(ds_arr, obs_dict, var_name, fig_name,
         #extend_arr = ['neither'] * 4 + ['both'] * 5
     if 'cwp' in var_name:
         cnlevels_arr =  [np.arange(0,360,20)] * 4 + [np.arange(-60,61,10)]*2 + [np.arange(-150,151,20)]*3
-        units = 'Wm$^{-2}$'
+        units = 'g m$^{-2}$'
         extend_arr = ['max'] * 4 + ['both'] * 5
 
     if 'lwp' in var_name:
         cnlevels_arr =  [np.arange(0,200,20)] * 4 + [np.arange(-60,61,10)]*2 + [np.arange(-120,121,20)]*3
-        units = 'Wm$^{-2}$'
+        units = 'g m$^{-2}$'
         extend_arr = ['max'] * 4 + ['both'] * 5
 
     plot_multiple_latlon_maps(dt_arr, title_arr, nrows=nrows, ncols=ncols, units=units,
