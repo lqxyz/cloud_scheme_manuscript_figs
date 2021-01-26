@@ -2,7 +2,7 @@ from __future__ import print_function
 from __future__ import division
 import os
 import sys
-sys.path.append('../')
+sys.path.append('../scripts/')
 import numpy as np
 import xarray as xr
 import timeit
