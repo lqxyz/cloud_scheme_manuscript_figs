@@ -15,6 +15,10 @@ def polar_cloud_amount_seasonal_cycle(ds_arr, exp_names, figname, obs_cf_dict=No
     cloud amount change in polar region: low and total cloud amount
     '''
     plot.close('all')
+
+    plot.rc['legend.fontsize'] = 8
+    # plot.rc['legend.handlelength'] = 2
+
     fig, axes = plot.subplots(nrows=1, aspect=(1.8, 1), ncols=2,  share=1)
 
     # for north polar region
@@ -62,7 +66,7 @@ def polar_cloud_amount_seasonal_cycle(ds_arr, exp_names, figname, obs_cf_dict=No
         ylim=(0, 100), xtickminor=False, grid=False)
 
     new_lines, new_labels = get_unique_line_labels(lines)
-    axes[-1].legend(new_lines, new_labels, loc='lc', ncol=1)
+    axes[-1].legend(new_lines, new_labels, loc='lc', ncol=2)
  
     fig.tight_layout()
     fig.savefig(figname, bbox_inches='tight', pad_inches=0.1, transparent=False)
