@@ -139,7 +139,7 @@ if __name__ == "__main__":
     # ===================================================================== #
 
     print('Saving data...')
-    save_dt_dir = './data'
+    save_dt_dir = '../data'
     if not os.path.exists(save_dt_dir):
         os.makedirs(save_dt_dir)
 
