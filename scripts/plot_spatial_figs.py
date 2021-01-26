@@ -131,7 +131,8 @@ def  plot_multiple_latlon_maps(dt_arr, title_arr, nrows=2, ncols=3,
     if fig_name is not None:
         fig.tight_layout()
         fig.savefig(fig_name, bbox_inches='tight', pad_inches=0.05, transparent=False)
-        #fig.savefig(fig_name.replace('.pdf', '.png'), bbox_inches='tight', pad_inches=0.05, transparent=False)
+        fig.savefig(fig_name.replace('.pdf', '.png'), bbox_inches='tight', pad_inches=0.05, transparent=False)
+        fig.savefig(fig_name.replace('.pdf', '.eps'), bbox_inches='tight', pad_inches=0.05, transparent=False)
 
     plt.show()
 

@@ -107,3 +107,4 @@ def zonal_mean_cld_frac_vertical_profile(ds_arr, exp_names, line_styles, figname
         plt.show()
     else:
         fig.savefig(figname, bbox_inches='tight', pad_inches=0.05, transparent=False)
+        fig.savefig(figname.replace('.pdf', '.eps'), bbox_inches='tight', pad_inches=0.05, transparent=False)

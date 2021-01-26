@@ -70,6 +70,7 @@ def polar_cloud_amount_seasonal_cycle(ds_arr, exp_names, figname, obs_cf_dict=No
  
     fig.tight_layout()
     fig.savefig(figname, bbox_inches='tight', pad_inches=0.1, transparent=False)
+    fig.savefig(figname.replace('.pdf', '.eps'), bbox_inches='tight', pad_inches=0.1, transparent=False)
     plot.rc.reset()
 
 def cre_seasonal_cycle(obs_dt, ds_arr, exp_names, figname):
@@ -157,5 +158,5 @@ def cre_seasonal_cycle(obs_dt, ds_arr, exp_names, figname):
 
     fig.tight_layout()
     
-    fig.savefig(figname, bbox_inches='tight', pad_inches=0.1, transparent=False)
-    # fig.savefig(figname.replace('.pdf', '.png'), bbox_inches='tight', pad_inches=0.05, transparent=False)
+    fig.savefig(figname, bbox_inches='tight', pad_inches=0.05, transparent=False)
+    fig.savefig(figname.replace('.pdf', '.eps'), bbox_inches='tight', pad_inches=0.05, transparent=False)

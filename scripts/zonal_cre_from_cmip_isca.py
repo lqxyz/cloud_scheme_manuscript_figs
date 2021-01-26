@@ -85,5 +85,6 @@ def cmp_zonal_mean_CREs(ds_arr, line_labels, obs_cre, fig_name,
     new_lines, new_labels = get_unique_line_labels(lines)
     fig.legend(new_lines, new_labels, loc='b', frameon=False, ncol=4)
 
-    fig.savefig(fig_name, bbox_inches='tight', pad_inches=0.1, transparent=False)
+    fig.savefig(fig_name, bbox_inches='tight', pad_inches=0.05, transparent=False)
+    fig.savefig(fig_name.replace('.pdf', '.eps'), bbox_inches='tight', pad_inches=0.05, transparent=False)
 

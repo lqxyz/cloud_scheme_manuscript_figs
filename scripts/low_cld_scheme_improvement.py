@@ -254,6 +254,7 @@ def low_cloud_improvement_evaluation_with_map(ds_arr_low, exp_names_local, obs_f
 
     fig.tight_layout()
     fig.savefig(figname, bbox_inches='tight', pad_inches=0.05, transparent=False)
+    fig.savefig(figname.replace('.pdf', '.eps'), bbox_inches='tight', pad_inches=0.05, transparent=False)
 
 
 def low_cloud_improvement_evaluation(ds_arr_low, exp_names_local, obs_flux_dict, figname):
@@ -338,5 +339,5 @@ def low_cloud_improvement_evaluation(ds_arr_low, exp_names_local, obs_flux_dict,
     fig.tight_layout()
     
     fig.savefig(figname, bbox_inches='tight', pad_inches=0.05, transparent=False)
-    #fig.savefig(figname.replace('.pdf', '.png'), bbox_inches='tight', pad_inches=0.05, transparent=False)
+    fig.savefig(figname.replace('.pdf', '.eps'), bbox_inches='tight', pad_inches=0.05, transparent=False)
  

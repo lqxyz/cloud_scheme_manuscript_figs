@@ -391,3 +391,5 @@ def plot_taylor_diagram(lwcre_fn, swcre_fn, netcre_fn, figname):
     plt.subplots_adjust(wspace=-0.2)
 
     fig.savefig(figname, bbox_inches='tight', pad_inches=0.05, transparent=False)
+    fig.savefig(figname.replace('.pdf', '.eps'), bbox_inches='tight', pad_inches=0.05, transparent=False)
+

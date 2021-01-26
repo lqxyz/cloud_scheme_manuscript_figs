@@ -209,3 +209,5 @@ def global_mean_CRE_bar_plot(ds_arr, exp_names, obs_toa_cre, figname, data_dir='
 
     plot.rc.reset()
     fig.savefig(figname, bbox_inches='tight', pad_inches=0.1, transparent=False)
+    fig.savefig(figname.replace('.pdf', '.eps'), bbox_inches='tight', pad_inches=0.1, transparent=False)
+

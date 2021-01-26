@@ -129,4 +129,5 @@ def cld_amt_and_lw_cre_composite_analysis_omega500(ds_lev, dt_arrs, labels, i_co
 
     fig.tight_layout() #w_pad=-10.5, h_pad=-10)
     fig.savefig(fig_nm, bbox_inches='tight', pad_inches=0.05, transparent=False)
-    #fig.savefig(fig_nm.replace('.pdf', '.png'), bbox_inches='tight', pad_inches=0.05, transparent=False)
+    fig.savefig(fig_nm.replace('.pdf', '.eps'), bbox_inches='tight', pad_inches=0.05, transparent=False)
+
