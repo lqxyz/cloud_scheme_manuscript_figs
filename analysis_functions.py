@@ -166,15 +166,21 @@ def get_global_mean(dt):
     dims = dt.dims
     try:
         lat_ind = dims.index('latitude')
+        lon_ind = dims.index('longitude')
         lat_nm = 'latitude'
         lon_nm = 'longitude'
     except:
         lat_ind = dims.index('lat')
+        lon_ind = dims.index('lon')
         lat_nm = 'lat'
         lon_nm = 'lon'
 
     coslat = np.cos(np.deg2rad(dt[lat_nm]))
-    dt_gm = np.average(dt.mean(lon_nm), axis=lat_ind, weights=coslat)
+
+    #dt_gm = np.average(dt.mean(lon_nm), axis=lat_ind, weights=coslat)
+    dt_ma = np.ma.array(dt, mask=np.isnan(dt))
+    dt_gm = np.ma.average(np.ma.average(dt_ma, axis=lon_ind), axis=lat_ind, weights=coslat)
+
     dims1 = [d for d in dims if d!=lat_nm and d!=lon_nm]
     coords = [dt[d] for d in dims1]
     dt_gm = xr.DataArray(dt_gm, coords=coords, dims=dims1)
