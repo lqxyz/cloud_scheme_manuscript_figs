@@ -213,9 +213,8 @@ def low_cloud_improvement_evaluation_with_map(ds_arr_low, exp_names_local, obs_f
         ax.set_ylim([np.min(sw_cre_bias).min(), np.max(sw_cre_bias).max()*1.1])
     
     ax.format(xlocator=1, ytickminor=False, xtickminor=False)
-    ax.set_title('(c) SW CRE bias') #, fontsize=BIGGER_SIZE)
-    ax.set_ylabel('CRE Bias (Wm$^{-2}$)')#, fontsize=MEDIUM_SIZE)
-    #ax.tick_params(labelsize=SMALL_SIZE-2)
+    ax.set_title('(c) SW CRE bias')
+    ax.set_ylabel('CRE Bias (Wm$^{-2}$)')
     ax.format(xrotation=-30)
 
     # =============== plot CRE and cloud amount relationship ===============
@@ -232,13 +231,13 @@ def low_cloud_improvement_evaluation_with_map(ds_arr_low, exp_names_local, obs_f
         l = ax.scatter(lcc_dict[key], swcre_dict[key], s=30, label=key, clip_on=False)
         lines.append(l)
 
-    ax.set_xlabel('LCC changes (%)') #, fontsize=MEDIUM_SIZE)
-    ax.set_ylabel('SW CRE changes (Wm$^{-2}$)') #, fontsize=MEDIUM_SIZE)
+    ax.set_xlabel('LCC changes (%)')
+    ax.set_ylabel('SW CRE changes (Wm$^{-2}$)')
     xlim = [min(lcc), max(lcc)*1.2]
     #xlim = [min(lcc)*1.1, max(lcc)*1.1]
     #xlim = [0, max(lcc)*1.2]
     ax.set_xlim(xlim)
-    ax.set_title('(d) Changes of SW CRE and LCC') #, fontsize=BIGGER_SIZE)
+    ax.set_title('(d) Changes of SW CRE and LCC')
     
     new_lines, new_labels = get_unique_line_labels(lines)
     ax.legend(new_lines, new_labels, ncol=1)

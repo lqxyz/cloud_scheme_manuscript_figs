@@ -25,8 +25,8 @@ def plot_omega500_map(ax, ds, coeff=24*3600/100, cnlevels=np.arange(-60,65,5),
     m = Basemap(llcrnrlon=0, urcrnrlon=360, llcrnrlat=-30, urcrnrlat=30, ax=ax, resolution='c') # lon_0=180, #(projection='robin', lon_0=0., ax=ax, resolution='c')
     m.drawcoastlines()
     m.fillcontinents(color='black',lake_color='aqua')
-    m.drawparallels(np.arange(-30.,31.,15.),   labels=[1,0,0,0], linewidth=0, fontsize=8)
-    m.drawmeridians(np.arange(-180.,181.,60.), labels=[0,0,0,1], linewidth=0, fontsize=8)
+    m.drawparallels(np.arange(-30.,31.,15.),   labels=[1,0,0,0], linewidth=0)
+    m.drawmeridians(np.arange(-180.,181.,60.), labels=[0,0,0,1], linewidth=0)
     xi, yi = m(lons_2d, lats_2d)
 
     if plot_type == 'contourf':
@@ -36,7 +36,7 @@ def plot_omega500_map(ax, ds, coeff=24*3600/100, cnlevels=np.arange(-60,65,5),
             cs = m.contourf(xi, yi, dt, cmap=cmap, levels=cnlevels, extend=extend)
     if plot_type == 'contour':
         cs = m.contour(xi, yi, dt, levels=cnlevels, colors=color, linewidths=1)
-        ax.clabel(cs, cs.levels[::30], inline=True, fmt="%.0f", fontsize=10)
+        ax.clabel(cs, cs.levels[::30], inline=True, fmt="%.0f")
     return cs
 
 def cld_amt_and_lw_cre_composite_analysis_omega500(ds_lev, dt_arrs, labels, i_colors, titles, ylabels, fig_nm,

@@ -40,8 +40,8 @@ def interpolate_obs_dict(obs_dict, lats, lons):
 
 
 def plot_latlon_with_map(ax, dt, cmap='RdBu_r', cnlevels=None,
-            extend='neither', add_cbar=True, # cbar_labelsize=14, 
-            cbar_loc='bottom', cbar_pad=0.3, title=None): #, title_fontsize=14):
+            extend='neither', add_cbar=True,
+            cbar_loc='bottom', cbar_pad=0.3, title=None):
     """
     Plot the single lat/lon map in ax.
     """
@@ -50,8 +50,8 @@ def plot_latlon_with_map(ax, dt, cmap='RdBu_r', cnlevels=None,
     lons_2d, lats_2d = np.meshgrid(lons, lats)
     m = Basemap(lon_0=180, ax=ax, resolution='c') #(projection='robin', lon_0=0., ax=ax, resolution='c')
     m.drawcoastlines()
-    m.drawparallels(np.arange(-60.,61.,30.),   labels=[1,0,0,0], linewidth=0, fontsize=10)
-    m.drawmeridians(np.arange(-180.,181.,60.), labels=[0,0,0,1], linewidth=0, fontsize=10)
+    m.drawparallels(np.arange(-60.,61.,30.),   labels=[1,0,0,0], linewidth=0)
+    m.drawmeridians(np.arange(-180.,181.,60.), labels=[0,0,0,1], linewidth=0)
     xi, yi = m(lons_2d, lats_2d)
     if cnlevels is None:
         cs = m.contourf(xi, yi, dt, cmap=cmap)
@@ -60,7 +60,7 @@ def plot_latlon_with_map(ax, dt, cmap='RdBu_r', cnlevels=None,
     if add_cbar:
         m.colorbar(cs, location=cbar_loc, pad=cbar_pad) # cbar
         #cbar.ax.tick_params(labelsize=cbar_labelsize)
-    ax.set_title(title, loc='left') #, fontsize=title_fontsize)
+    ax.set_title(title, loc='left')
 
     return cs
 
