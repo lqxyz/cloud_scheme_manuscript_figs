@@ -16,7 +16,7 @@ def zonal_mean_cld_frac_vertical_profile(ds_arr, exp_names, line_styles, figname
                 decode_times=False, autoclose=True)
     add_datetime_info(cf_calipso)
     clcalipso = cf_calipso.clcalipso.where(np.logical_and(cf_calipso.year>=2007,
-                cf_calipso.year<=2016), drop=True)
+                cf_calipso.year<=2015), drop=True)
     p_calipso = z_to_p(cf_calipso.alt_mid * 1e3)
     cf_zm_calipso1 = clcalipso.mean(('time', 'longitude'))
     cf_zm_calipso = np.ma.MaskedArray(cf_zm_calipso1, mask=np.isnan(cf_zm_calipso1))
