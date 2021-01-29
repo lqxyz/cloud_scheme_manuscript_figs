@@ -12,7 +12,6 @@ import warnings
 warnings.simplefilter(action='ignore') #, category=FutureWarning)
 import copy
 
-
 def bin_4d_data(ds, bins, grp_time_var='year', bin_var_nm='ELF'):
     """
     ds: a xarray dataset containing several variables
@@ -50,7 +49,6 @@ def bin_4d_data(ds, bins, grp_time_var='year', bin_var_nm='ELF'):
                     ds_bin_mean[var][i,j,:] = grouped[var]
 
     return pdf_omega, ds_bin_mean
-
 
 def bin_3d_data(ds, bins, grp_time_var='year', bin_var_nm='ELF'):
     """
@@ -111,9 +109,6 @@ def select_4d_data(ds_m, bin_data_dict, ds_mask, bins,
     t_var_names = ['dt_tg_condensation', 'dt_tg_diffusion',  'dt_tg_convection']
     q_var_names = [v.replace('_tg_', '_qg_') for v in t_var_names]
 
-    cal_total_tendency(ds_m, t_var_names)
-    cal_total_tendency(ds_m, q_var_names)
-
     sum_varnm = cal_total_tendency(ds_m, t_var_names)
     t_var_names.append(sum_varnm)
     sum_varnm = cal_total_tendency(ds_m, q_var_names)
@@ -158,7 +153,6 @@ def select_4d_data(ds_m, bin_data_dict, ds_mask, bins,
 
     return pdf_m, ds_bin_mean_m, dims, coords
     
-
 def select_3d_data(ds_m, bin_data_dict, ds_mask, bins,
       bin_var_nm='ELF', land_sea='ocean', grp_time_var='year'):
 
@@ -196,7 +190,6 @@ def select_3d_data(ds_m, bin_data_dict, ds_mask, bins,
 
     return pdf_m, ds_bin_mean_m, dims, coords
 
-
 def select_3d_obs_data(ds_m, bin_data_dict, ds_mask, bins,
       bin_var_nm='ELF', land_sea='ocean', grp_time_var='year'):
     three_d_varnames = [ 'toa_sw_cre', 'toa_lw_cre', 'toa_net_cre',
@@ -230,7 +223,6 @@ def select_3d_obs_data(ds_m, bin_data_dict, ds_mask, bins,
 
     return pdf_m, ds_bin_mean_m, dims, coords
 
-
 def bin_obs_data(ds, s_lat=-30, n_lat=30, bin_var_nm='omega500',
         grp_time_var='year', bins=np.arange(0,1.1,0.1), land_sea='global', land_mask_dir='./data/'):
 
@@ -259,7 +251,6 @@ def bin_obs_data(ds, s_lat=-30, n_lat=30, bin_var_nm='omega500',
     ds_bin_mean_m_array = xr.Dataset(vars_dict, coords=coords2)
 
     return ds_bin_mean_m_array
-
 
 def bin_isca_exp_data(ds, s_lat=-30, n_lat=30, bin_var_nm='omega500', bin_var=None,
         grp_time_var='year', bins=np.arange(0,1.1,0.1), land_sea='global', land_mask_dir='./data'):
