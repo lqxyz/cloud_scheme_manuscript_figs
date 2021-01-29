@@ -87,6 +87,23 @@ def bin_3d_data(ds, bins, grp_time_var='year', bin_var_nm='ELF'):
 
     return pdf_omega, ds_bin_mean
 
+def cal_total_tendency(ds, var_names):
+    dt_sum = ds[var_names[0]]
+    for var_nm in var_names[1:]:
+        dt_sum = dt_sum + ds[var_nm]
+    if '_tg_' in var_nm:
+        ds['dt_tg_sum_cond_diffu_conv'] = dt_sum
+    if '_qg_' in var_nm:
+        ds['dt_qg_sum_cond_diffu_conv'] = dt_sum
+
+    if '_tg_' in var_nm:
+        sum_varnm = 'dt_tg_sum_cond_diffu_conv'
+        ds[sum_varnm] = dt_sum
+    if '_qg_' in var_nm:
+        sum_varnm = 'dt_qg_sum_cond_diffu_conv'
+        ds[sum_varnm] = dt_sum
+
+    return sum_varnm
 
 def select_4d_data(ds_m, bin_data_dict, ds_mask, bins,
       bin_var_nm='ELF', land_sea='ocean', grp_time_var='year'):
@@ -97,8 +114,10 @@ def select_4d_data(ds_m, bin_data_dict, ds_mask, bins,
     cal_total_tendency(ds_m, t_var_names)
     cal_total_tendency(ds_m, q_var_names)
 
-    t_var_names.append('dt_tg_sum_cond_diffu_conv')
-    q_var_names.append('dt_qg_sum_cond_diffu_conv')
+    sum_varnm = cal_total_tendency(ds_m, t_var_names)
+    t_var_names.append(sum_varnm)
+    sum_varnm = cal_total_tendency(ds_m, q_var_names)
+    q_var_names.append(sum_varnm)
 
     for varnm in t_var_names:
         bin_data_dict[varnm] = ds_m[varnm]
