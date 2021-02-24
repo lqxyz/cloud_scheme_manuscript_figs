@@ -9,6 +9,7 @@
 
 #### Required packages (uncommon)
 * `proplot`: https://proplot.readthedocs.io/en/latest/index.html 
+* `cmaps`: https://github.com/hhuangwx/cmaps
 * `taylorDiagram`: https://gist.github.com/ycopin/3342888#file-taylordiagram-py
 * `isca` package: Interpolate from sigma to pressure levels. Install following the instruction on https://execlim.github.io/Isca/latest/html/install.html
 
