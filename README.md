@@ -6,6 +6,7 @@
 * The observed cloud radiative effect products are from [CERES-EBAF](https://ceres.larc.nasa.gov/compare_products.php). 
 * The CMIP5 ouputs are obtained from the Centre for Environmental Data Analysis (https://www.ceda.ac.uk). 
 * The Isca model outputs produced for this study are available on Zenodo: [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3831988.svg)](https://doi.org/10.5281/zenodo.3831988)
+* The input files for simulaitons are generated based on standard [AMIP SST and sea ice boundary condition dataset](https://pcmdi.llnl.gov/mips/amip/SST.html), and the scripts used to get these files are archived at [input4MIPs](https://github.com/lqxyz/input4MIPs) repository. 
 
 #### Required packages (uncommon)
 * `proplot`: https://proplot.readthedocs.io/en/latest/index.html 
