@@ -4,14 +4,13 @@ import xarray as xr
 import pandas as pd
 import cmaps
 import warnings
-warnings.simplefilter(action='ignore') #, category=FutureWarning)
+warnings.simplefilter(action='ignore')
 import matplotlib.pyplot as plt
 import proplot as plot
 from matplotlib import cm
-from mpl_toolkits.basemap import Basemap # shiftgrid, addcyclic
+from mpl_toolkits.basemap import Basemap
 import string
 from scipy import interpolate
-
 
 def interpolate_obs_dict(obs_dict, lats, lons):
     obs_remap_dict = {}
@@ -38,7 +37,6 @@ def interpolate_obs_dict(obs_dict, lats, lons):
             obs_remap_dict[nm] = dt
     return obs_remap_dict
 
-
 def plot_latlon_with_map(ax, dt, cmap='RdBu_r', cnlevels=None,
             extend='neither', add_cbar=True,
             cbar_loc='bottom', cbar_pad=0.3, title=None):
@@ -58,12 +56,10 @@ def plot_latlon_with_map(ax, dt, cmap='RdBu_r', cnlevels=None,
     else:
         cs = m.contourf(xi, yi, dt, cmap=cmap, levels=cnlevels, extend=extend)
     if add_cbar:
-        m.colorbar(cs, location=cbar_loc, pad=cbar_pad) # cbar
-        #cbar.ax.tick_params(labelsize=cbar_labelsize)
+        m.colorbar(cs, location=cbar_loc, pad=cbar_pad)
     ax.set_title(title, loc='left')
 
     return cs
-
 
 def  plot_multiple_latlon_maps(dt_arr, title_arr, nrows=2, ncols=3,
         units_arr=None, units=None, cmap_arr=None, cmap=None,
@@ -136,7 +132,6 @@ def  plot_multiple_latlon_maps(dt_arr, title_arr, nrows=2, ncols=3,
 
     plt.show()
 
-
 def cmp_spatial_patterns_from_exps_and_obs(ds_arr, obs_dict, var_name, fig_name, 
             exp_names=['LS', 'FD', 'ALL'],
             obs_name='Obs', coeff=1.0, title_nm=None, cmap1=None, cmap2=None, l_title_add_gm=False):
@@ -201,40 +196,38 @@ def cmp_spatial_patterns_from_exps_and_obs(ds_arr, obs_dict, var_name, fig_name,
     
     units = ''
     if 'low_cld_amt' in var_name or 'high_cld_amt' in var_name or 'mid_cld_amt' in var_name:
-        cnlevels_arr =  [np.arange(0,101,5)] * 4 + [np.arange(-40,41,5)]*2 + [np.arange(-60,61,10)]*3
+        cnlevels_arr =  [np.arange(0,101,5)] * 4 + [np.arange(-40,41,5)] * 2 + [np.arange(-60,61,10)] * 3
         units = '%'
     if 'tot_cld_amt' in var_name:
-        cnlevels_arr =  [np.arange(0,101,5)] * 4 + [np.arange(-40,41,5)]*2 + [np.arange(-60,61,10)]*3
+        cnlevels_arr =  [np.arange(0,101,5)] * 4 + [np.arange(-40,41,5)] * 2 + [np.arange(-60,61,10)] * 3
         units = '%'
     if 'toa_sw_up' in var_name:
-        cnlevels_arr =  [np.arange(60,171,10)] * 4 +[np.arange(-30,31,5)]*2 + [np.arange(-60,61,10)]*3
+        cnlevels_arr =  [np.arange(60,171,10)] * 4 +[np.arange(-30,31,5)] * 2 + [np.arange(-60,61,10)] * 3
         units = 'Wm$^{-2}$'
     if 'olr' in var_name:
-        cnlevels_arr =  [np.arange(100,301,15)] * 4 + [np.arange(-20,21,5)]*2 + [np.arange(-60,61,10)]*3
+        cnlevels_arr =  [np.arange(100,301,15)] * 4 + [np.arange(-20,21,5)] * 2 + [np.arange(-60,61,10)] * 3
         units = 'Wm$^{-2}$'
         extend_arr = ['both']*9
     if 'toa_net_flux' in var_name:
-        cnlevels_arr =  [np.arange(-140,141,20)] * 4 + [np.arange(-40,41,5)]*2 + [np.arange(-60,61,10)]*3
+        cnlevels_arr =  [np.arange(-140,141,20)] * 4 + [np.arange(-40,41,5)] * 2 + [np.arange(-60,61,10)] * 3
         units = 'Wm$^{-2}$'
     if 'toa_sw_cre' in var_name:
-        cnlevels_arr =  [np.arange(-120,1,10)] * 4 + [np.arange(-30,31,5)]*2 + [np.arange(-60,61,10)]*3
+        cnlevels_arr =  [np.arange(-120,1,10)] * 4 + [np.arange(-30,31,5)] * 2 + [np.arange(-60,61,10)] * 3
         units = 'Wm$^{-2}$'
         extend_arr = ['min'] * 4 + ['both'] * 5
     if 'toa_lw_cre' in var_name:
-        cnlevels_arr =  [np.arange(0,71,5)] * 4 + [np.arange(-30,31,5)]*2 + [np.arange(-30,31,5)]*3
+        cnlevels_arr =  [np.arange(0,71,5)] * 4 + [np.arange(-30,31,5)] * 2 + [np.arange(-30,31,5)] * 3
         units = 'Wm$^{-2}$'
         extend_arr = ['max'] * 4 + ['both'] * 5
     if 'toa_net_cre' in var_name:
-        cnlevels_arr =  [np.arange(-90,91,10)] * 4 + [np.arange(-30,31,5)]*2 + [np.arange(-60,61,10)]*3
+        cnlevels_arr =  [np.arange(-90,91,10)] * 4 + [np.arange(-30,31,5)] * 2 + [np.arange(-60,61,10)] * 3
         units = 'Wm$^{-2}$'
-        #extend_arr = ['neither'] * 4 + ['both'] * 5
     if 'cwp' in var_name:
-        cnlevels_arr =  [np.arange(0,360,20)] * 4 + [np.arange(-60,61,10)]*2 + [np.arange(-150,151,20)]*3
+        cnlevels_arr =  [np.arange(0,360,20)] * 4 + [np.arange(-60,61,10)] * 2 + [np.arange(-150,151,20)] * 3
         units = 'g m$^{-2}$'
         extend_arr = ['max'] * 4 + ['both'] * 5
-
     if 'lwp' in var_name:
-        cnlevels_arr =  [np.arange(0,200,20)] * 4 + [np.arange(-60,61,10)]*2 + [np.arange(-120,121,20)]*3
+        cnlevels_arr =  [np.arange(0,200,20)] * 4 + [np.arange(-60,61,10)] * 2 + [np.arange(-120,121,20)] * 3
         units = 'g m$^{-2}$'
         extend_arr = ['max'] * 4 + ['both'] * 5
 
