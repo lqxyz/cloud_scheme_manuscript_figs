@@ -202,7 +202,7 @@ def cmp_spatial_patterns_from_exps_and_obs(ds_arr, obs_dict, var_name, fig_name,
         cnlevels_arr =  [np.arange(0,101,5)] * 4 + [np.arange(-40,41,5)] * 2 + [np.arange(-60,61,10)] * 3
         units = '%'
     if 'toa_sw_up' in var_name:
-        cnlevels_arr =  [np.arange(60,171,10)] * 4 +[np.arange(-30,31,5)] * 2 + [np.arange(-60,61,10)] * 3
+        cnlevels_arr =  [np.arange(60,171,10)] * 4 + [np.arange(-30,31,5)] * 2 + [np.arange(-60,61,10)] * 3
         units = 'Wm$^{-2}$'
     if 'olr' in var_name:
         cnlevels_arr =  [np.arange(100,301,15)] * 4 + [np.arange(-20,21,5)] * 2 + [np.arange(-60,61,10)] * 3
