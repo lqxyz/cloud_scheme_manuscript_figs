@@ -159,8 +159,7 @@ def select_3d_data(ds_m, bin_data_dict, ds_mask, bins,
 
     three_d_varnames = ['soc_olr', 'soc_olr_clr', 'flux_lhe', 'flux_t',
                     'toa_sw_cre', 'toa_lw_cre', 'toa_net_cre',
-                    'tot_cld_amt', 'low_cld_amt', 'mid_cld_amt', 'high_cld_amt', #] #, 'soc_tot_cloud_cover',
-                    'z_pbl']
+                    'tot_cld_amt', 'low_cld_amt', 'mid_cld_amt', 'high_cld_amt',] #, 'soc_tot_cloud_cover','z_pbl'
     for vn in three_d_varnames:
         bin_data_dict[vn] = ds_m[vn]
 
